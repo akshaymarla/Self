@@ -4,15 +4,23 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #ffeef8, #f0e6ff);
+    background: white;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }
 
 .container {
     text-align: center;
     animation: gentle-bounce 2s ease-in-out infinite;
+    background: linear-gradient(135deg, #ffeef8, #f0e6ff);
+    padding: 50px 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(142, 68, 173, 0.3);
+    position: relative;
+    z-index: 10;
+    border: 3px solid #e1bee7;
 }
 
 @keyframes gentle-bounce {
@@ -106,15 +114,78 @@ h1 {
     height: 100%;
     pointer-events: none;
     overflow: hidden;
-    z-index: -1;
+    z-index: 1;
 }
 
 .heart {
     position: absolute;
     font-size: 20px;
-    color: #ff69b4;
+    color: #ffb3d9;
     animation: fall 8s linear infinite;
-    opacity: 0.6;
+    opacity: 0.4;
+}
+
+/* Background decorative elements */
+.bg-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.floating-element {
+    position: absolute;
+    font-size: 2em;
+    opacity: 0.1;
+    animation: float-around 15s linear infinite;
+}
+
+@keyframes float-around {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(20px, -30px) rotate(90deg); }
+    50% { transform: translate(-10px, -20px) rotate(180deg); }
+    75% { transform: translate(-30px, 10px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Cute corner decorations */
+.corner-decor {
+    position: absolute;
+    font-size: 3em;
+    opacity: 0.15;
+    z-index: 2;
+}
+
+.corner-decor.top-left {
+    top: 20px;
+    left: 20px;
+    animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+.corner-decor.top-right {
+    top: 20px;
+    right: 20px;
+    animation: gentle-pulse 3s ease-in-out infinite 0.5s;
+}
+
+.corner-decor.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    animation: gentle-pulse 3s ease-in-out infinite 1s;
+}
+
+.corner-decor.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    animation: gentle-pulse 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes gentle-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.1); opacity: 0.25; }
 }
 
 @keyframes fall {
