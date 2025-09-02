@@ -144,12 +144,33 @@ function createHeart() {
     }, 8000);
 }
 
+// Create floating background decorations
+function createFloatingDecoration() {
+    const decorations = ['🌸', '🦋', '🌺', '🌷', '🌻', '🌼', '✨', '💫', '🌈'];
+    const decoration = document.createElement('div');
+    decoration.innerHTML = decorations[Math.floor(Math.random() * decorations.length)];
+    decoration.className = 'floating-element';
+    decoration.style.left = Math.random() * 100 + 'vw';
+    decoration.style.top = Math.random() * 100 + 'vh';
+    decoration.style.animationDelay = Math.random() * 15 + 's';
+    
+    document.getElementById('bg-decoration').appendChild(decoration);
+    
+    setTimeout(() => {
+        decoration.remove();
+    }, 15000);
+}
+
 // Create hearts every 2 seconds
 setInterval(createHeart, 2000);
 
-// Initial hearts
+// Create floating decorations every 3 seconds
+setInterval(createFloatingDecoration, 3000);
+
+// Initial hearts and decorations
 for (let i = 0; i < 5; i++) {
     setTimeout(createHeart, i * 400);
+    setTimeout(createFloatingDecoration, i * 600);
 }
 
 // Add cute mouse follow effect
