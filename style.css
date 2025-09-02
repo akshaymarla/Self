@@ -1,0 +1,163 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ffeef8, #f0e6ff);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+@keyframes gentle-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #8e44ad;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: color-shift 3s ease-in-out infinite;
+}
+
+@keyframes color-shift {
+    0%, 100% { color: #8e44ad; }
+    50% { color: #e74c3c; }
+}
+
+.buttons {
+    margin: 30px 0;
+}
+
+.forgive-button {
+    font-size: 1.8em;
+    padding: 15px 30px;
+    margin: 0 15px;
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+    font-family: inherit;
+}
+
+.forgive-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+}
+
+.not-yet-button {
+    font-size: 1.5em;
+    padding: 12px 25px;
+    margin: 0 15px;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+    font-family: inherit;
+}
+
+.not-yet-button:hover {
+    transform: scale(0.95);
+    background: linear-gradient(45deg, #c0392b, #a93226);
+}
+
+.gif_container {
+    margin-top: 20px;
+}
+
+.gif_container img {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff69b4;
+    animation: fall 8s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.puppy-eyes {
+    font-size: 4em;
+    margin: 10px 0;
+    animation: blink 3s infinite;
+}
+
+@keyframes blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+    20%, 40%, 60%, 80% { transform: translateX(3px); }
+}
+
+@keyframes spark-fade {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
