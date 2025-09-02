@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.container {
+    text-align: center;
+    animation: celebration-bounce 1s ease-in-out infinite;
+}
+
+@keyframes celebration-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+.celebration-emoji {
+    font-size: 5em;
+    margin-bottom: 20px;
+    animation: spin-celebration 2s ease-in-out infinite;
+}
+
+@keyframes spin-celebration {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(10deg) scale(1.1); }
+}
+
+.header_text {
+    font-size: 3.5em;
+    color: #2ecc71;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: rainbow-text 3s ease-in-out infinite;
+}
+
+@keyframes rainbow-text {
+    0%, 100% { color: #2ecc71; }
+    25% { color: #3498db; }
+    50% { color: #e74c3c; }
+    75% { color: #f39c12; }
+}
+
+.thank-you-text {
+    font-size: 1.8em;
+    color: #8e44ad;
+    margin: 20px 0;
+}
+
+.gif_container {
+    margin: 30px 0;
+}
+
+.gif_container img {
+    width: 100%; 
+    max-width: 400px; 
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: happy-float 2s ease-in-out infinite;
+}
+
+@keyframes happy-float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-8px) scale(1.02); }
+}
+
+.final-message {
+    margin-top: 30px; 
+    font-size: 2em;
+    color: #e91e63;
+    animation: pulse-love 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-love {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
